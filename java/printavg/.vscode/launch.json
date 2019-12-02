@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - printavg",
+            "request": "launch",
+            "mainClass": "app.printavg",
+            "projectName": "printavg"
+        }
+    ]
+}

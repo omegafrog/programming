@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int main(){
+  int up,down,well_depth;
+
+  scanf("%d%d%d",&up,&down,&well_depth);
+
+  int day=1;
+  int night=0; //noon==0, night==1
+  int height=0;
+  while(1){
+    //noon
+    if(night==0){
+      height+=up;
+      night=1;
+      if(height>=well_depth) break;
+    }
+    else if(night==1){
+      height-=down;
+      night=0;
+      day++;
+    }
+  }
+  printf("%d",day);
+}

@@ -1,0 +1,27 @@
+#include<iostream.h>
+using namespace std;
+
+#include "coffeeMachine.h"
+
+int main(){
+  java java(5.5.5);
+  java.show();
+
+  int num=0;
+  scanf("%d",&num);
+
+  switch(num){
+  case 1:
+    java.get_espresso();
+    break;
+  case 2:
+    java.get_americano();
+    break;
+  case 3:
+    java.get_sugarcoffee();
+    break;
+  case 4:
+    java.fill_machine();
+    break;
+  }
+}

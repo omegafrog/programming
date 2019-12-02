@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+
+#include"calculator.h"
+
+void Calculator::run(){
+  cout<<"put two numbers:"<<endl;
+  int a,b;
+  cin>>a>>b;
+  int res=0;
+  res=a+b;
+  cout<<"sum of two number is"<<res<<endl;
+}

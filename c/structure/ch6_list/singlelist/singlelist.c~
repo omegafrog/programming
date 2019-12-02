@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#include"singlelist.h"
+
+SListNode* insert_first(SListNode *head, int value){ // first node==SListNode head
+  SListNode* p;
+  p=(SListNode*)(malloc(sizeof(SListNode)));
+  p->item=value;
+  p->next=head;
+  head=p;
+  return head;
+}
+
+SListNode* insert(SListNode *head, SListNode *pre, element value){
+  SListNode* p;
+  p=(SListNode*)malloc(sizeof(SListNode));
+  p->item=value;
+  p->next=pre->next;
+  pre->next=p->next;
+  return head;
+}
+
+SListNode* delete_first(SListNode *head){
+  SListNode* remove;
+  remove=head;
+  head=remove->next;
+  free(remove);
+  
+SListNode* delete(SListNode *head, SListNode *pre);
+void printf_list(SListNode *head);

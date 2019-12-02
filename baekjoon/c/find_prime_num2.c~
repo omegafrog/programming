@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+int main(){
+  int start;
+  int end;
+  int sum_of_prime=0;
+  int min_prime;
+
+  scanf("%d",&start);
+  scanf("%d",&end);
+
+  int* isPrime=(int*)calloc(10001,sizeof(int));
+  isPrime[1]=1;
+  
+  for(int i=2;i<=end;i++){
+    if(isPrime[i]==1) continue;
+    else
+      for(int k=2*i;k<=end;k+=i)
+	isPrime[k]=1;
+  }
+  int tmp=0;
+  for(int i=start;i<=end;i++){
+    if(isPrime[i]==0){
+      sum_of_prime+=i;
+      if(tmp==0){
+	min_prime=i;
+	tmp=1;
+      }
+    }
+  }
+  if(sum_of_prime==0){
+    sum_of_prime=-1;
+    printf("%d",sum_of_prime);
+  }
+  else
+    printf("%d\n%d",sum_of_prime,min_prime);
+  
+}

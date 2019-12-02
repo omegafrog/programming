@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main(){
+  int A,B,V;
+  scanf("%d%d%d",&A,&B,&V);
+
+
+  int ans=0;
+  while(1){
+    if((V-B/(A-B)<=ans)&&(ans<(V-B)/(A-B)+1)) break;
+    else
+      ans++;
+  }
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+extern void add();
+
+int main(){
+  extern int num1;
+  extern int num2;
+  int num3;
+
+  printf("num1=%d,num2=%d,num3=%d\n",num1,num2,num);
+  add();
+  printf("num1=%d,num2=%d,num3=%d\n",num1,num2,num3);
+
+}

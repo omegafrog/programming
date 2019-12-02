@@ -1,0 +1,7 @@
+#include<iostream>
+#include"stand.h"
+
+stand::stand(){power=1; lightValue=1; timer=0;};
+stand::~stand(){};
+stand::stand(int  lv){power=1;,lightValue=
+  

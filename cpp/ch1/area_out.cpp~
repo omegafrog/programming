@@ -1,0 +1,19 @@
+#include<iostream>
+
+using namespace std;
+
+int main(){
+  int width,height;
+
+  cin>>width;
+
+  cout<<"width is "<<width;
+
+  cin>>height;
+
+  cout<<"height is "<<height;
+
+  cout<<"area of rectangular is "<<width*height;
+
+  return 0;
+}

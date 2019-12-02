@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<malloc.h>
+
+void get_tcase();
+int find_rnum(int tcase[3]);
+int display(int);
+
+int *p_tcase=NULL;
+
+int main(void){
+  int tcase;
+  scanf("%d",&tcase);
+
+  
+  
+  for(int i=0;i<tcase;i++){
+    get_tcase();
+    display(find_rnum(p_tcase));
+  }
+}
+
+void get_tcase(){
+  p_tcase=(int*)(malloc(sizeof(int)*3));
+  scanf("%d%d%d",p_tcase,p_tcase+1,p_tcase+2);//H,W,N
+}
+
+int find_rnum(int tcase[3]){
+  int rnum=0;
+  int floor;
+
+  floor = p_tcase[2];
+  return (floor*100+rnum);
+}
+
+int display(int rnum){
+  printf("%d",rnum);
+}

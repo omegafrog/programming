@@ -1,0 +1,16 @@
+#ifndef STAND_H
+#define STAND_H
+
+class stand{
+  int power;
+  int lightValue;
+  int timer;
+ public:
+  void turnon();
+  void turnoff();
+  void lightchange();
+  
+  stand();
+  
+  
+  

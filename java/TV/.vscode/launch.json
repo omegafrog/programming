@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - iptv",
+            "request": "launch",
+            "mainClass": "app.iptv",
+            "projectName": "TV"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TV",
+            "request": "launch",
+            "mainClass": "app.TV",
+            "projectName": "TV"
+        }
+    ]
+}

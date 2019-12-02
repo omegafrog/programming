@@ -1,0 +1,83 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<time.h>
+////////////////////////////////
+//sigan choguaaaaaaaaaaaaaaaa///////////////
+
+typedef struct kaingCalender{
+  int max_x;
+  int max_y;
+  int x;
+  int y;
+}KCalender;
+
+int do_Kaing(KCalender *k);
+
+int main(){
+  /*
+     clock_t start1, stop1,start2,stop2,start3,stop3;
+     double duration1,duration2,duration3;
+   */
+  int count;
+  scanf("%d",&count);
+
+  //start3=clock();
+  
+  KCalender *kp;
+  kp=(KCalender*)malloc(sizeof(KCalender)*count);
+
+  int* resultp;
+  resultp=(int*)malloc(sizeof(int)*count);
+
+  //start1=clock();
+  for(int  i=0;i<count;i++){
+    scanf("%d%d%d%d",&(kp+i)->max_x,&(kp+i)->max_y,&(kp+i)->x,&(kp+i)->y);
+    *(resultp+i)=do_Kaing(kp+i);
+  }
+  /*
+     stop1=clock();
+     start2=clock();
+   */
+    for(int  i=0;i<count;i++)
+    printf("%d\n",*(resultp+i));
+  /*
+     stop2=clock();
+     stop3=clock();
+     duration1=(double)(stop1-start1)/CLOCKS_PER_SEC;
+     duration2=(double)(stop2-start2)/CLOCKS_PER_SEC;
+     duration3=(double)(stop3-start3)/CLOCKS_PER_SEC;
+     printf("%f\n%f\n%f",duration1,duration2,duration3);
+   */
+  free(kp);
+  free(resultp);
+}
+
+int do_Kaing(KCalender *k){
+  clock_t start,stop;
+  double duration;
+  int result=1;
+  int x=1,y=1;
+  
+  start=clock();
+  while(!(x==k->x&&y==k->y)){
+    result++;
+    if(x==k->max_x&&y==k->max_y){
+      stop=clock();
+      duration=(stop-start)/CLOCKS_PER_SEC;
+      printf("%f\n",duration);
+      return -1;
+    }
+    
+    if(x==k->max_x) x=1;
+    else x++;
+    if(y==k->max_y) y=1;
+    else y++;
+    
+  }
+  stop=clock();
+  
+  duration=(stop-start)/CLOCKS_PER_SEC;
+  printf("%f\n",duration);
+  return result;
+}
+

@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+class rectangle{
+public:
+  int width;
+  int height;
+
+  Rectangule()//
+  {
+    
+  }
+
+  Rectangel(int w, int n)//constructer
+  {
+    width=w;
+    height =h;
+  }
+  
+  int getArea(){
+    return width*height;
+  }
+};
+
+int main(){
+  rectangle rect1;
+  rectangle rect2(5,4);
+  
+  rect.width =2;
+  rect.height=3;
+  cout<<"area:"<<rect.getArea()<<endl;
+}

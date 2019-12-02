@@ -1,0 +1,19 @@
+#ifndef STACK_H
+#define STACK_H
+#ifndef MAX_STACK_SIZE
+#define MAX_STACK_SIZE 100
+#endif
+
+typedef char element;
+typedef struct {
+	element data[MAX_STACK_SIZE];
+	int top;
+} StackType;
+
+void init_stack(StackType *s);
+int is_empty(StackType *s);
+int is_full(StackType *s);
+void push(StackType *s, element item);
+element pop(StackType *s);
+element peek(StackType *s);
+#endif

@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include"completeBinarytree.h"
+#include "typequeue.h"
+#define MAXSIZE 10
+
+
+void VLR(compBnTree* root){
+  if(root){
+    printf("%d",root->item);
+    VLR(root->left);
+    VLR(root->right);
+  }
+}
+
+void LVR(compBnTree* root){
+  if(root){
+    LVR(root->left);
+    printf("%d",root->item);
+    LVR(root->right);
+  }
+}
+
+void LRV(compBnTree* root){
+  if(root){
+    LRV(root->left);
+    LRV(root->right);
+    printf("%d",root->item);
+  }
+}
+
+int top=-1;
+
+compBnTree* stack[MAXSIZE];
+
+void push(compBnTree* p){
+  if(top<MAXSIZE-1){
+    stack[++top]=p;
+  }
+}
+
+compBnTree* pop(){
+  compBnTree* p=NULL;
+  if(top>-1){
+    p=stack[top--];
+  }
+  return p;
+}
+
+void VLR_iter(compBnTree* root){
+  while(1){
+    for(;root;root=root->left){
+      push(root);
+    }
+    root=pop();
+    if(!root) break;
+    printf("%d->",root->item);
+    root=root->right;
+  }
+}
+
+

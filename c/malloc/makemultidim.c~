@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<malloc.h>
+
+int *make_multiDimArray(int ,...);
+int main(){
+  int dim;
+  printf("input dimention:");
+  scanf("%d",&dim);
+  int *dimsize;
+  dim=(int*)malloc(sizeof(int)*dim);
+  for(int i=0;i<dim;i++){
+    printf("input %dth dimension size:");
+    scanf("%d",dim+i);
+  }
+
+  switch(dim){
+  case 1:
+    int *p;
+    p=make_multiDimArray(1,dimsize[0]);
+    break;
+  case 2:
+    int **p;
+    p=make_multiDimArray(2,dimsize[0],dimsize[1]);
+    break;
+  case 3:
+    int ***p;
+    p=make_multidimArray(3,dimsize[0],dimsize[1],dimsize[2]);
+    break;
+  }
+}
+
+int *make_multiDimArray(int num,...){
+  int *dimsize=NULL;
+  dimsize=&(num+1);
+
+  switch(num){
+  case 1:
+    int *p;
+    p=(int*)malloc(sizeof(int)*dimsize[0]);
+    return p;
+  case 2:
+    int **p;
+    p=(int **)malloc(sizeof(int *)*dimsize[0]);
+    for(int i=0;i<dimsize[0],i++)
+      *(p+i)=(int *)malloc(sizeof(int)*dimsize[1]);
+    return p;
+  case 3:
+    int ***p;
+    p=(int ***)malloc(sizeof(int **)*dimsize[0]);
+    for(int i=0;i<dimsize[0],i++){
+      *(p+i)=(int **)malloc(sizeof(int *)dimsize[1]);
+      for(int j=0;j<dimsize[1],j++)
+	*(*(p+i)+j)=(int *)malloc(sizeof(int)*dimsize[2]);
+    }
+    return p;
+  }
+}

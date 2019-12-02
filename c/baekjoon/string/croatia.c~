@@ -1,0 +1,6 @@
+-*- mode: compilation; default-directory: "~/class/programming/c/baekjoon/string/" -*-
+Compilation started at Fri Dec 21 05:04:25
+
+gcc -g croatia.c -o croatia
+
+Compilation finished at Fri Dec 21 05:04:27

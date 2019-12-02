@@ -1,0 +1,89 @@
+#include<iostream>
+#include<vecotr>
+using namespace std;
+class shape{
+public:
+  virtual void print()=0;
+};
+
+class Line : public shape{
+  void print()
+  {
+    cout <<"This is Line\n";
+  }
+};
+
+class Circle : public shape{
+  void print()
+  {
+    cout<<"this is circle.\n"
+  }
+};
+
+class Rectangle : public shape
+{
+  void print()
+  {
+    cout<<"This is rectangle\n"
+  }
+};
+
+
+class GraphicEditor{
+private:
+  vector<shape*> shape;
+  int size=0;
+  static inputEditor* instance;
+  inputEditor(){
+    int size=0;
+  }
+public:
+  void makeLine(){
+    shape.push_back(new Line);
+    size++;
+  }
+  void makeCircle(){
+    shape.push_back(new Circle);
+    size++;
+  }
+  void makeRectangle(){
+    shape.push_back(new Rectangle);
+    size++;
+  }
+  void printGraphic(){
+    for(int i=0;i<size;i++){
+      shape[i]->print();
+      delete shape[i];
+    }
+  }
+
+  static inputEditor& getinstance(){
+    if(!instance){
+      instance=new inputEditor();
+    }
+    return *instance;
+  }
+};
+
+GraphicEditor* g1::instance=NULL;
+
+
+int main(){
+  cout<<"1 : new figure\n2 : print&delete all figures\n3 : exit\n";
+  int choice;
+  int choice2;
+  for(;;){
+    cin>>choice;
+    switch(choice){
+    case 1:
+      cout<<"1 : new Line\n2 : new Circle\n3 : new Rectangle\n4 : end\n";
+      cin>>choice2;
+      switch(choice2){
+      case 1:
+	cout<<"add new line\n";
+	g1::
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<malloc.h>
+
+int main(){
+  int count=0;
+  int* inputnump=NULL;
+  scanf("%d",&count);
+  inputnump=(int*)malloc(sizeof(int)*count);
+
+  int* resultnump=NULL;
+  resultnump=(int*)malloc(sizeof(int)*count);
+
+  int biggestnum=inputnump[0];
+  
+  for(int i=0;i<count;i++){
+    if(biggestnum<inputnump[i]) biggestnum=inputnump[i];
+  }
+  int* countlist=NULL;
+  countlist=(int*)malloc(sizeof(int)*(biggestnum+1));
+  for(int i=0;i<biggestnum+1;i++){
+    countlist[i]=0;
+  }
+  
+  for(int j=0;j<=biggestnum;j++){
+    for(int i=0;i<count;i++){
+      if(j==inputnump[i]){
+	countlist[j]++;
+      }
+    }
+  }
+
+  int temp=countlist[0];
+  int x=1;
+  while(x<biggestnum+1){
+    countlist[x]+=temp;
+    temp=countlist[x];
+    x++;
+  }
+
+  for(int i=count-1;i>=0;i--){
+    resultnump[countlist[inputnump[i]-1]]=inputnump[i];
+  }
+  for(int i=0;i<count;i++){
+    printf("%d\n",resultnump[i]);
+  }
+  
+  
+  
+}

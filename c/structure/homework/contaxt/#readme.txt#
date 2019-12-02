@@ -1,0 +1,42 @@
+요구사항: 
+  contacts-big.txt와 contacts-small.txt를 읽어, 
+  id순으로 정리한 파일([small/big]-idorder-qsort.txt, [small/big]-idorder-xxsort.txt)과 
+  이름순으로 정리한 파일([small/big]-nameorder-qsort.txt, [small/big]-nameorder-xxsort.txt)를 만들라.
+ - 정렬방법은 quicksort와 그외 한가지 방법을 선택하여 적용한다. 
+ - 시행처리 방식 예) 
+  c:\> main.exe -order id contacts-big.txt  <enter>
+       quick-sort processing time: ##.#### sec
+       
+       xx-sort processing time: ##.#### sec
+       ==> big-idorder-qsort.txt, big-idorder-xxsort.txt 생성됨. 
+  c:\> main.exe -order name contact-smalls.txt <enter>
+       quick-sort processing time: ##.###### sec
+       xx-sort processing time: ##.###### sec
+       ==> small-nameorder-qsort.txt, small-nameorder-xxsort.txt 생성됨.
+ - 제한: 처리시간을 측정할 때,  다음 사항들을 제외하여 정렬시간만 포함되도록 할 것.
+   . file read/write
+   . 모니처출력문(printf문)
+ - (참고) 시간 측정방법은 교재의 1장 p22~23 참고
+o 제출항목
+  - 프로그램 파일: ####.c 파일(들)로 제출 
+  - 결과파일 8개: id순으로 정렬한 파일 4개, 이름순으로 정렬한 파일 4개 
+  - PPT파일: 
+    . 실험 개요 및 환경: 비교 알고리즘 및 PC사양
+    . 실험결과 비교 테이블 or/and 그래프 (다양한 조합에 대한) 
+    . 실험결과 분석: 빅오를 고려하여, 정렬데이터 건수(N)과 두 알고리즘의 실제 실험결과의 비교 및 원인 분석
+o 채점 기준
+ - 배점: 10점 
+ - (프로그램: 4점) 컴파일되어 위의 처리 양식대로 실행되어야 함, 컴파일이 안되면 5점 감점
+ - (정렬결과: 2점) 정렬결과의 정확성
+ - (PPT파일:  4점) 비교 테이블, 결과 분석 
+ - 지각제출: 50% 감점
+<참고> 
+o 데이터파일 형식: : "id   name   height"을 라인별로 저장
+999   Howard   1.94
+1000   Jaxx   1.45
+994   Alaric   1.32
+995   Decker   1.54
+o 데이터 파일 
+ - contacts-small.txt  파일 제공
+ - contacts-big.txt  파일 제공
+

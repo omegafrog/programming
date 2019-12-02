@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int *p;
+
+  p=new int;
+  if(!p){
+    cout<<"cannot allocate memory."<<endl;
+    return 0;
+  }
+}
+
+
+  
+    
+				     
+				     
+				  
+				     

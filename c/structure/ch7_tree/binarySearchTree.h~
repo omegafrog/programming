@@ -1,0 +1,13 @@
+#ifndef BNSRCTREE_H
+#define BNSRCTREE_H
+
+typedef int element;
+
+typedef struct binarySearchTree{
+  element item;
+  struct binarySearchTree *left,  *right;
+}bnSearchTree;
+
+bnSearchTree* search(bnSearchTree* t, element item);
+
+#endif

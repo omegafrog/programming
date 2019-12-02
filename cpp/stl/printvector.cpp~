@@ -1,0 +1,12 @@
+#include<iostream>
+#include<vector>
+class Cpoint{
+  int x;
+  int y;
+  
+};
+
+int main(){
+  vector<Cpoint*> Cpoints;
+  
+}

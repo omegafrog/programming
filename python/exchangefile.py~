@@ -1,0 +1,12 @@
+import os
+
+f=open('./imagenetObjectname_and_RealName_tabel.txt')
+while True:
+    line=f.readline()
+    if not line: break
+    spline=line.split(' ')
+    before=spline[0]
+    after=spline[1]
+    a={}
+    a[before]=after
+    print(a)

@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include"binarySearchTree.h"
+
+bnSearchTree* search(bnSearchTree* t, element item){
+  if(t==NULL) return NULL;
+  if(t->item==item) return t;
+  else if(t->item>item) return search(t->left,item);
+  else return search(t->right,item);
+}

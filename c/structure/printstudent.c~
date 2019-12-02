@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct student{
+  int num;
+  char name[20];
+  double grade;
+}student;
+
+void get_data(student **);
+void display_data(student *);
+
+int main(){
+  student *std;
+  std = malloc(sizeof(student)*10);
+
+  get_data(&std);
+  display_data(std);
+
+}
+
+void get_data(student **std){
+  for(int i=0;i<10;i++){
+    printf("input student number:");
+    scanf("%d",&((*std)[i].num));
+    printf("input student name:");
+    scanf("%s",(*std)[i].name);
+    printf("input student grade:");
+    scanf("%lf",&((*std)[i].grade));
+  }
+}
+  

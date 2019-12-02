@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include<random>
+
+mt19937_64 rng(3244); 
+uniform_int_distribution<int> dist(10, 500);
+dist(rng) <= 랜덤 정수 생성
+using namespace std;
+
+//내가 입력한 숫자와 상대방이 랜덤하게 예측한 번호와
+//비교하여 아웃인지, 아웃이 아니라면 볼과 스트라이크의 개수를 출력하는 함수
+void NumberBaseBall(string numbers) 
+{
+
+}
+
+//상대방이 예측한 3자리 번호, 중복숫자가 있으면 안딤
+string GeneratePreNumbers()
+{
+	string prenumbers = "";
+	return prenumbers;
+}
+
+//입력된 숫자가 3자리수인지, 중복숫자는 없는지 확인하는 함수
+bool CheckValid(string numbers)
+{
+	return false;
+}
+
+
+int main()
+{
+	//상대방이 랜덤하게 생성한 중복숫자 없는 3자리 번호
+	string predictNumber = GeneratePreNumbers();
+	//3내가 입력할 번호
+	string numbers;
+
+	cout << "예상번호를 입력하세요(3자리수):";
+	cin >> numbers;
+
+	if (CheckValid(numbers)) {
+		NumberBaseBall(numbers);
+	}
+	else {
+	  cout << "입력된 숫자가 유효하지 않습니다."<<endl;
+	}
+
+	return 0;
+}

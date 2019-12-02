@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+#include "stack.h"
+#include "checkparency.h"
+
+
+
+
+
+
+int checkparency(char input[]){
+  StackType s;  // 
+  init_stack(&s);
+  
+  int len;
+  char ch;
+  char temp;
+  len =strlen(input);
+
+  for(int i=0;i<len;i++){
+    ch=input[i];
+    switch(ch){
+    case '(': case '{': case '[': push(&s,ch);break;
+    case ')': case '}': case ']':
+      if(is_empty(&s)) return 0; 
+      else{
+	temp=pop(&s);
+	if((temp=='('&&ch!=')')||
+	   (temp=='{'&&ch!='}')||
+	   (temp=='['&&ch!='}')) return 0;
+      }
+      break;
+    default: continue;
+    }
+  }
+  if((!is_empty(&s))) return 0;
+
+  return 1;
+}
+
+int calccheck(char input[]){ //evaluate only '(', ')'
+  int i=0;
+  while(input[i]!='\0'){
+    if(input[i]=='{'||input[i]=='}'||
+       input[i]=='['||input[i]==']') return 0;
+    i++;
+  }
+  return 1;
+}
+
+  
+      
+      
+      
+      
+    
+  

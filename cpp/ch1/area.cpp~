@@ -1,0 +1,17 @@
+#include<iostream>
+#define PI 3.14
+using namespace std;
+
+double area(int);
+
+double area(int r){
+  return PI*r*r;
+}
+
+int main(){
+  int n=3;
+  char c='#';
+  cout<<c<<5.5<<'-'<<n<<"hello",,true<<"\n";
+  cout<<"n+5="<<n+5<<'\n';
+  cout<<"area is"<<area(n);
+}

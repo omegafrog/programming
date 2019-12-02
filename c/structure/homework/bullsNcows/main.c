@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<string.h>
+
+int checknoc(char); //
+void bullNcow(int, char*,  char*);
+int getnoc();
+
+int main(){
+  int noc; //number of code
+  
+  char *code;
+  code=(char*)malloc(sizeof(char));
+  char *guess;
+  guess=(char*)malloc(sizeof(char));
+
+  /*================================================\
+  | for(;;){                                        |
+  |   printf("number of code(only 0, 3, 4, 5):\n"); |
+  |   scanf("%s",temp);                             |
+  |   if(checknoc(noc)==0) break;                   |
+  |   printf("wrong input. try again.\n");          |
+  | }                                               |
+  \================================================*/
+
+  noc=getnoc();
+  printf("%d",noc);
+  
+  /*
+     switch(noc){
+     case 0:
+       bullNcow(0, code, guess);
+       break;
+     case 3: case 4: case 5:
+       bullNcow(1, code, guess);
+       break;
+     }
+   */
+}
+
+int checknoc(char temp){
+  if(temp!='0'&&temp!='3'&&temp!='4'&&temp!='5') return 1;
+  else return 0;
+}
+
+int getnoc(){
+  char temp;
+  for(;;){
+    printf("number of code(only 0,3,4,5,):\n");
+    scanf("%c",&temp);
+    if(checknoc(temp)==0) return temp-48;
+    printf("wrong input.try again.\n");
+  }
+}
+
+void bullNcow(int mode, char* code, char* guess){
+  
+      
+    
+  
+}  

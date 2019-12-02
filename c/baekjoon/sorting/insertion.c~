@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<malloc.h>
+
+int main(){
+  int *np;
+  int *rp;
+
+  int count;
+  scanf("%d",&count);
+
+  np=(int*)malloc(sizeof(int)*count);
+  rp=(int*)malloc(sizeof(int)*count);
+
+  for(int i=0;i<count;i++){
+    scanf("%d",np+i);
+  }
+  rp[0]=np[0];
+  for(int i=1;i<count-1;i++){
+    rp[i]=np[i];
+    if(rp[i-1]<rp[i]){
+      int temp=rp[i];
+      rp[i]=rp[i-1];
+      rp[i-1]=temp;
+    }
+  }
+
+  for(int i=0;i<count;i++){
+    printf("%d",rp[i]);
+  }
+}
+

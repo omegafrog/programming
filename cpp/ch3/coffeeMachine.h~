@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+class CoffeeMachine{
+private:
+  int coffee;
+  int water;
+  int sugar;
+  CoffeeMachine(int coffee, int water, int sugar);
+  
+public:
+  void get_espresso();
+  void get_americano();
+  void get_sugarcoffe();
+  void fill_machine();
+  void show();
+};
+
+
+  

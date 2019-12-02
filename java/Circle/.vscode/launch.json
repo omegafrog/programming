@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - circle",
+            "request": "launch",
+            "mainClass": "app.circle",
+            "projectName": "Circle"
+        }
+    ]
+}

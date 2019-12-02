@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - tv",
+            "request": "launch",
+            "mainClass": "tvv.tv",
+            "projectName": "tvv"
+        }
+    ]
+}

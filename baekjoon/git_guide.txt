@@ -1,0 +1,45 @@
+1. install git
+sudo apt-get install git
+
+2. set local repository
+mkdir "dirname" && cd "dirname"
+git init
+
+3. git status
+show git repository status
+
+git log
+show changed log
+
+4. git add "filename"
+
+add "filename" as index
+git add . ->add all file in this directory
+
+5.git commit -m "memo"
+memo : 1. what's changed
+       2. blank
+       3. reason for change
+
+
+repository share
+1. push
+push : upload to server repository
+git push -u <repository> <refspec>
+refspec : set branch for push
+
+2. clone
+clone : clone other's repository
+
+3.pull
+pull : download to local repository
+
+
+
+
+
+
+use nickname for url
+git remote add <name> <url>
+
+

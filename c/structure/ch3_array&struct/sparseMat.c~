@@ -1,0 +1,80 @@
+#include<stdio.h>
+#define MAX_TERMS 10
+
+typedef struct items{
+  int row;// index(row) 
+  int col;// index(col)
+  int value;// value
+}item;
+
+typedef struct SparseMatrix{
+  item data[MAX_TERMS];
+  int rows;// number of row
+  int cols;// number of col
+  int terms;// number of items
+}SparseMatrix;
+
+SparseMatrix matrix_transpose(SparseMatrix a);
+void matrix_sparse_print(SparseMatrix a);
+void matrix_print(SparseMatrix a);
+
+int main(){
+  SparseMatrix a = {
+    {{0,3,7},{1,0,9},{1,5,8},{3,0,6},{3,1,5},{4,5,1},{5,2,2}},
+    6,
+    6,
+    7
+  };
+
+  SparseMatrix b;
+  b= matrix_transpose(a);
+
+  matrix_sparse_print(b);
+  printf("\n");
+  
+  matrix_print(b);
+}
+
+SparseMatrix matrix_transpose(SparseMatrix a){
+  int bindex=0;
+  SparseMatrix b;
+
+  b.rows = a.rows;
+
+  b.cols = a.cols;
+
+  b.terms = a.terms;
+  
+  for(int x=0;x<a.cols;x++){
+    for(int i=0;i<a.terms;i++){
+      if(a.data[i].col==x){
+	b.data[bindex].value=a.data[i].value;
+	b.data[bindex].row=a.data[i].col;
+	b.data[bindex].col=a.data[i].row;
+	bindex++;
+      }
+    }
+  }
+
+  return b;
+}
+
+void matrix_print(SparseMatrix a){
+  for(int r=0;r<a.rows;r++){
+    for(int c=0;c<a.cols;c++){
+      int res=0;
+      for(int index=0;index<a.terms;index++){
+	if((a.data[index].row==r)&&(a.data[index].col==c))
+	  res=a.data[index].value;
+      }
+      printf("%d ",res);
+    }
+    printf("\n");
+  }
+}
+
+void matrix_sparse_print(SparseMatrix a){
+  for(int i=0;i<a.terms;i++){
+    printf("%d %d %d\n",a.data[i].row, a.data[i].col, a.data[i].value);
+  }
+}

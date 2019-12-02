@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main(){
+  char homeAddr[30];
+
+  fgets(homeAddr,28,stdin);
+
+  int i=0;
+  while(homeAddr[i]!='\0')
+    printf("%c",homeAddr[i]);
+}

@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<malloc.h>
+
+int main(){
+  int num;
+  
+  scanf("%d",&num);
+
+  char ans[num][81];
+  int allscore[num];
+  
+  for(int i=0;i<num;i++)
+    gets(ans[i][81]);
+
+  int i=0;
+  int score=0;
+  for(int x=0;x<num;x++){
+    while(ans[x][i]!=0){
+      if(ans[x][i]=='o')
+	score++;
+      else{
+	allscore[x]+=score;
+	score=0;
+      }
+    i++;
+    }
+  }
+  for(int i=0;i<num;i++)
+    printf("%d\n",allscore[i]);
+}

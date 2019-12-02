@@ -1,0 +1,22 @@
+#include<stdio.h>
+#define MAXBIT 8;
+
+void appendparity(int [],int);
+void decToBool(int []);
+void display(int[]);
+
+int main(){
+  int bit[MAXBIT]={0,};
+  int num;
+  printf("dec:");
+  scanf("%d",&num);
+  
+  appendparity(bit,num);
+  display(bit);
+}
+
+void decToBool(int bit[MAXBIT]){
+  
+void appendparity(int bit[MAXBIT],int num){
+  
+  

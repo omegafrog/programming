@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+int main(){
+  int num;
+  scanf("%d",&num);
+
+  num=~num+1;
+
+  printf("dec:%d",num);
+  printf("hexadec:0x%x",num);

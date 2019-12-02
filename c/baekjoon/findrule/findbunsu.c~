@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int summation(int, int);
+
+int main(){
+  int num;
+  scanf("%d",&num);
+  
+  int i=2;
+  
+  for(;;){
+    int a=summation(2,i);
+    int b=summation(3,i+1);
+
+    if((num>=a)&&(num<=b))
+      break;
+    i++;
+  }
+    
+
+
+

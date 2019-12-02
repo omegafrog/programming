@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - givargs",
+            "request": "launch",
+            "mainClass": "app.givargs",
+            "projectName": "givearg"
+        }
+    ]
+}

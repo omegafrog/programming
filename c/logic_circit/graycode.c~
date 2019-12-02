@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<string.h>
+#define MAXNUM 8
+
+void getbit(int[]);
+//void boolToGray(int[],int[]);
+//void grayToBool(int[],int[]);
+//void display(int[]);
+
+int main(){
+  int inputbit[MAXNUM]={0,};//bit[0] is msb
+  int outputbit[MAXNUM]={0,};//outputbit[0] is msb
+
+  int temp;
+  for(;;){
+    printf("choose the mode.\n1. bool->gray\n2. gray->bool\n3.quit\n");
+    scanf("%d",&temp);
+    switch(temp){
+    case 1:
+      getbit(inputbit);
+      //boolToGray(inputbit,outputbit);
+      //display(outputbit);
+      break;
+    case 2:
+      getbit(inputbit);
+      //GrayTobool(inputbit,outputbit);
+      //display(outputbit);
+      break;
+    case (int)'q':
+      return 0;
+    }
+  }
+}
+
+void getbit(int inputbit[MAXBIT]){
+  char input[32];
+  scanf("%s",input);//'0'=48
+
+  int len=strlen(input);
+  for(int i=0;i<len;i++)
+    inputbit[MAXBIT-1-i]=(int)input[len-1-i]-48;
+}
+
+void boolToGray(int inputbit[MAXBIT], int outputbit[MAXBIT]){
+  inputbit[0]=outputbit[0];
+  
+  for(int i=1; i<MAXBIT;i++){
+    if(inputbit[

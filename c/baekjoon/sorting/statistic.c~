@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<malloc.h>
+
+int main(){
+  int countlist[8001]={0,};
+  double avg;
+  int centerval=0;
+  int mode;
+  int modeval;
+  int range;
+  int count;
+  scanf("%d",&count);
+  
+  int inputnum;
+  int countindex=inputnum+4000;
+  int sum=0;
+  int smallest=4000, biggest=-4000;
+  for(int i=0;i<count;i++){
+    scanf("%d",&inputnum);
+    sum+=inputnum;
+    countlist[countindex]++;
+    if(smallest>inputnum)
+      smallest=inputnum;
+    if(biggest<inputnum)
+      biggest=inputnum;
+    }
+  avg=sum/(double)count;
+  modeval=countlist[smallest+4000];
+  for(int i=smallest+4000;i<=biggest+4000;i++){
+    if(modeval>countlist[i]){
+      modeval=countlist[i];
+      mode=i;
+    }
+  }
+  
+
+  
+}

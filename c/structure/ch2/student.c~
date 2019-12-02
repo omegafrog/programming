@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+typedef struct student{
+  char name[4];
+  int  grade;
+}std;
+
+int main(){
+  int grade[10]={1,2,3,1,2,3,1,2,3,1};
+}

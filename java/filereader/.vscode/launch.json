@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - printscan",
+            "request": "launch",
+            "mainClass": "filereader.printscan",
+            "projectName": "filereader"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - filereader",
+            "request": "launch",
+            "mainClass": "filereader.filereader",
+            "projectName": "filereader"
+        }
+    ]
+}

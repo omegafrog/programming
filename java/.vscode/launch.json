@@ -1,0 +1,67 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - slider",
+            "request": "launch",
+            "mainClass": "gui.slider",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - checkbox",
+            "request": "launch",
+            "mainClass": "gui.checkbox",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RadioButtonItemEventEx",
+            "request": "launch",
+            "mainClass": "gui.RadioButtonItemEventEx",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CheckBoxItemEventEx",
+            "request": "launch",
+            "mainClass": "gui.CheckBoxItemEventEx",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ButtonEx",
+            "request": "launch",
+            "mainClass": "gui.ButtonEx",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LabelEx",
+            "request": "launch",
+            "mainClass": "gui.LabelEx",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - JComponentEx",
+            "request": "launch",
+            "mainClass": "gui.JComponentEx",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MyFrame",
+            "request": "launch",
+            "mainClass": "gui.MyFrame",
+            "projectName": "gui"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - game",
+            "request": "launch",
+            "mainClass": "event.game",
+            "projectName": "gui"
+        }
+    ]
+}

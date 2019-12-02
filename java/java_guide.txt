@@ -1,0 +1,3 @@
+ctrl+shift+p 
+java : create new project
+type project name <enter>

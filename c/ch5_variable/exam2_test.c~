@@ -1,0 +1,19 @@
+
+int num1=5;
+int num2=10;
+static int num3=20;
+
+static int input(){
+  int num=0;
+
+  printf("input number:");
+  scanf("%d",&num);
+
+}
+
+void add(){
+  num1=input();
+  num2=input();
+  num3=num1+num2;
+  printf("num1=%d,num2=%d, num3=%d\n",num1,num2,num3);
+}

@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+class TV{
+  bool on=false;
+  int channel=0;
+  int volume=0;
+
+public://if you do not specify, default is private
+  void channelup(){
+    channel++;
+  }
+
+  void channeldown(){
+    channel--;
+  }
+
+  void tvon(){
+    on=true;
+  }
+
+  void tvoff(){
+    on=false;
+  }
+  void display(){
+    cout << on << channel << volume <<endl;
+  }
+};
+
+int main(){
+  TV tv;
+  tv.display();
+  tv.channelup();
+  tv.display();
+}
+
+  

@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+class Circle {
+	double radius;
+public:
+	Circle(double radius) {
+		this->radius = radius;
+	}
+};
+
+int main()
+{
+	Circle c(3);
+	cout << c;
+}

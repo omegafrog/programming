@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+#define MAX_ELEMENT 200
+
+typedef struct {
+	int key;
+} element;
+
+typedef struct {
+	element heap[MAX_ELEMENT];
+	int heap_size;
+} HeapType;
+
+HeapType* create();
+void init(HeapType* h);
+void insert_max_heap(HeapType* h, element item);
+element delete_max_heap(HeapType* h);
+
+int main(){
+  int count;
+  scanf("%d",&count);
+  
+  element* numlist=(element*)malloc(sizeof(int)*count);
+
+  HeapType* heap=(HeapType*)malloc(sizeof(HeapType));
+  heap=create();
+  init(heap);
+
+  element temp;
+  for(int i=0;i<count;i++){
+    scanf("%d",&temp.key);
+    insert_max_heap(heap, temp);
+  }
+  for(int i=count-1;i>=0;i--)
+    numlist[i]=delete_max_heap(heap);
+
+  for(int i=0;i<count;i++)
+    printf("%d\n",numlist[i].key);
+			    
+}
+  
+    

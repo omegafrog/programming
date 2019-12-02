@@ -1,0 +1,13 @@
+#include<stdio.h>
+
+int main(){
+  int a=0,b=0,n=0;
+  int r=2;
+
+  scanf("%d",&n);
+  n=(n-1)/6;
+  while(r(r-1)/2<n)
+    r++;
+  printf("%d",r);
+
+}

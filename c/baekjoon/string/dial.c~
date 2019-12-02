@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+int main(){
+  int *phonenum=NULL;
+  char inputstr[16];
+
+  scanf("%s",inputstr);
+
+  printf("%d",A);
+}

@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<malloc.h>
+#include<string.h>
+
+void repeatStr(int, char*);
+
+int main(){
+  int count;
+  int repeatNum;
+  
+  scanf("%d",&count);
+
+  for(int i=0;i<count;i++)
+    repeatNum();
+}
+
+void repeatNum(){
+  char string[21];
+  int num;
+
+  scanf("%d%[^\n]s",&num,&string);
+  
+  int i=0;
+
+  while(string[i]!=0){
+    for(int x=0;x<num;x++)
+      printf("%c",string[i]);
+    i++;
+  }
+}
+      

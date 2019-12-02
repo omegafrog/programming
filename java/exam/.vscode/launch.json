@@ -1,0 +1,46 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - StringStack",
+            "request": "launch",
+            "mainClass": "stack.StringStack",
+            "projectName": "exam"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ColorPoint",
+            "request": "launch",
+            "mainClass": "Point.ColorPoint",
+            "projectName": "exam"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Km2Mile",
+            "request": "launch",
+            "mainClass": "Converter.Km2Mile",
+            "projectName": "exam"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Won2Dollar",
+            "request": "launch",
+            "mainClass": "Converter.Won2Dollar",
+            "projectName": "exam"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - IPTV",
+            "request": "launch",
+            "mainClass": "tv.IPTV",
+            "projectName": "exam"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ColorTV",
+            "request": "launch",
+            "mainClass": "tv.ColorTV",
+            "projectName": "exam"
+        }
+    ]
+}

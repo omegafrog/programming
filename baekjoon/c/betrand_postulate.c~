@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+
+void findPrimeNum(int end,int* isPrime){
+  for(int i=2;i<=(int)sqrt((double)end);i++){
+      if(isPrime[i]==1) continue;
+      else
+	for(int k=2*i;k<=end;k+=i)
+	  isPrime[k]=1;
+    }
+}
+
+
+int main(){
+  int t_cases_size=10;
+  int* t_cases=(int*)malloc(sizeof(int)*t_cases_size); //smaller than 123456
+  int t_case_index=0;
+    
+  while(1){
+    scanf("%d",t_cases+t_case_index);
+    if(t_cases[t_cases_size]==0) break;
+    else if(t_cases_size<=t_case_index+1){
+      t_cases_size*=2;
+      t_cases=(int*)realloc(t_cases,t_cases_size);
+    }
+    t_case_index++;
+  }
+  int tmp=0;
+  while(tmp<t_case_index){
+    printf("%d\n",t_cases[tmp]);
+    tmp++;
+  }
+ }
+  

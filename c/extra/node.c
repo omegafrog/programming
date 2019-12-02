@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<malloc.h>
+
+typedef struct node {
+	int number;
+	struct node *p_next;
+}NODE;
+void addNewNode(NODE**p_head,NODE **pp_tail);
+NODE *p_head = NULL;
+NODE *p_tail = NULL;
+int main() {
+	while (1) {
+	  printf("더할 수를 입력하세요. ");
+		printf("종료하고싶으면 0000을 입력하세요.\n");
+		addNewNode(&p_head, &p_tail);
+		if (p_tail->number == 0000)
+			break;
+	}
+	int sum=0;
+	NODE *p;
+	p = p_head;
+	while (p->p_next != NULL) {
+		sum += p->number;
+		if (p == p_head)
+			printf("%d", p->number);
+		else if(p->number!=0000)
+			printf(" + %d", p->number);
+		p = p->p_next;
+
+	}
+	printf(" = %d", sum);
+}
+
+void addNewNode(NODE **pp_head,NODE **pp_tail) {
+
+
+	NODE *p;//p_head의 값을 변경할 수 없음. 마지막 null이 나오는 p_next포인터를 찾아서 새로 메모리를 할당해줘야하는데, 이를 위해 필요함.
+
+	if (*pp_head != NULL) {
+		p = *(pp_tail);
+		p->p_next = (NODE*)malloc(sizeof(NODE));
+		p = p->p_next;//*p가 필요한 이유
+		*pp_tail = p;
+	}
+	else {
+		*pp_head = (NODE*)malloc(sizeof(NODE));
+		p = *pp_head;
+		*pp_tail = *pp_head;
+	}
+
+	printf("입력 : ");
+	scanf("%d", &(p->number));
+	p->p_next = NULL;
+}

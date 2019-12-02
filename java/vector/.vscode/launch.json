@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - vector",
+            "request": "launch",
+            "mainClass": "vector.vector",
+            "projectName": "vector"
+        }
+    ]
+}

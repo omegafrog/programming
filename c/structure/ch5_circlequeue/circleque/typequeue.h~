@@ -1,0 +1,15 @@
+#ifndef TYPE_Q
+#define TYPE_Q
+
+#define MAX_QUEUE_SIZE 5
+typedef int element;
+
+//front=index of first data -1
+//rear=index of last data
+
+typedef struct{
+  element data[MAX_QUEUE_SIZE];
+  int front, rear;
+}QueType;
+
+#endif
