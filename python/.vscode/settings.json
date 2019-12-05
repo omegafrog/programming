@@ -1,3 +1,4 @@
 {
-    "maven.view": "hierarchical"
+    "maven.view": "hierarchical",
+    "python.pythonPath": "/media/jiwoo/ubuntu/anaconda3/bin/python"
 }
