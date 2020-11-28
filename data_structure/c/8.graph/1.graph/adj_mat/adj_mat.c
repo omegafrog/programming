@@ -41,3 +41,21 @@ void dfs(GraphType* g, int v){
             dfs(g, i);
     }
 }
+
+void bfs(GraphType*g, int v){
+    cqueue* q=(cqueue*)malloc(sizeof(cqueue));
+    init_cQueue(q);
+    
+    enqueue(q, v);
+    while(!is_empty(q)){
+        v=dequeue(q);
+        printf("%d-> ",v);
+        
+        for(int i=0;i<g->n;i++){
+            if(visited[i]==0){
+                enqueue(q,i);
+                visited[i]=1;
+            }
+        }
+    }
+}

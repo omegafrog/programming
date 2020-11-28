@@ -71,5 +71,7 @@ void dfs(GraphType* g, int v){
     // that vertex is not visited, do dfs(g, i)
     while(now!=NULL){
         if(visited[now->n]==0) dfs(g, now->n);
+        // go to next v's adj vertex.
+        now=now->link;
     }
 }

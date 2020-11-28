@@ -5,7 +5,7 @@ int main(){
     g=(GraphType*)malloc(sizeof(GraphType));
     
     init(g);
-    for(int i=1;i<4;i++)
+    for(int i=0;i<4;i++)
         insert_vertex(g);
     insert_edge(g,0,1);
     insert_edge(g,0,2);
