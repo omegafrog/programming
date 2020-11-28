@@ -75,3 +75,50 @@ void dfs(GraphType* g, int v){
         now=now->link;
     }
 }
+
+void dfs_stack(GraphType* g, int v){
+    stackType* s = new_stack();
+    push(s, v);
+    
+    while(!is_empty(s)){
+        v=pop(s);
+        
+        // if v is not visited
+        if(visited[v]==0){
+            // v is visited.
+            printf("%d-> ",v);
+            visited[v]=1;
+            
+            GraphNode* now = g->adj_list[v];
+            while(now!=NULL){
+                push(s,now->n);
+                
+                now=now->link;
+            }
+        }
+    }
+    printf("\n");
+}
+
+void bfs(GraphType*g, int v){
+    cqueue* q=(cqueue*)malloc(sizeof(cqueue));
+    
+    init_cQueue(q);
+    
+    enqueue(q,v);
+    visited[v]=1;
+    
+    while(!is_empty_s(q)){
+        v=dequeue(q);
+        printf("%d-> ",v);
+        
+        GraphNode* now = g->adj_list[v];
+        while(now!=NULL){
+            if(visited[now->n]==0){
+                enqueue(q,now->n);
+                visited[now->n]=1;
+            }
+            now=now->link;
+        }
+    }
+}
