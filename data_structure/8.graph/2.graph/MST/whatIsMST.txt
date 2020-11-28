@@ -1,0 +1,2 @@
+spanning tree : tree has all vertexes in graph.
+minimum spanning tree : in network, spanning tree has smalleset weight, smallest edges.
