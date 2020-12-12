@@ -1,16 +1,22 @@
 #ifndef __MST_H__
 #define __MST_H__
 
-#define MAX_VERTEX 50
+#include <stdio.h>
+#include <stdlib.h>
 
-struct edge{
-    int u,v; // start, end vertex.
-    int weight; // weight.
-}
+#include "./linearQueue/src/TypeLQueue.h"
+
+
+
 
 typedef struct GraphType{
-    int n; // num of vertex
-    struct edge[2*MAX_VERTEX]; // edge array.
-}
+    int n,m; // n : num of vertex, m :  num of edges
+    struct edge Edges[2*MAX_VERTEX]; // edge array.
+}GraphType;
 
-void kruskal(GraphType* g, )
+void init_graph(GraphType* g);
+void insert_edge(GraphType* g, int u, int v, int w);
+void kruskal(GraphType* g);
+void Union(int a, int b);
+int find(int curr);
+#endif

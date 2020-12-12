@@ -1,2 +1,11 @@
 spanning tree : tree has all vertexes in graph.
 minimum spanning tree : in network, spanning tree has smalleset weight, smallest edges.
+
+kruskal's mst : greedy method 
+
+greedy method : 선택된 순간마다 가장 좋다고 생각되는 것들을 선택하는 방법.
+
+greedy choice property, optimal substructure가 충족되어야 한다.
+
+greedy choice proprety : 앞의 선택이 뒤에 영향을 주지않음.
+optimal substructure : 문제 전체에 대한 최적해가 부분문제의 최적해도 된다.
