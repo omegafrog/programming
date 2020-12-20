@@ -1,0 +1,24 @@
+#ifndef __HISTOGRAM_H__
+#define __HISTOGRAM_H__
+
+#inlcude <iostream>
+
+class Histogram{
+ private:
+  string exp;
+  int charNum;
+  int alphabet[23];
+
+  void getAlphabetNum
+ protected:
+  
+ public:
+  Histogram(string exp);
+  
+  void put(string exp);
+  void putc(char ch);
+  void print();
+};
+
+
+#endif
