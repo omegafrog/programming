@@ -1,0 +1,5 @@
+CC = g++
+CFLAGS = -g -std=c++11
+
+main : main.cpp WordGame.cpp player.cpp
+	$(CC) $(CFLAGS) -o main main.cpp WordGame.cpp player.cpp
