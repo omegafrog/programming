@@ -59,20 +59,12 @@ void Histogram::setAlphabetNum(){
 	int curr=0;
 
 	//while end of exp
-	while(curr<exp.length()){
-
-	  // if no more finding alphabet is exist
-	  if(exp.find(alphabet[i],curr)==-1){
-		// save countval in numarray
-		numOfAlphabet[i]=count;
-		break;
-	  }
+	while(exp.find(alphabet[i],curr)!=-1){
 	  // if finding alphabet is exist
-	  else{
-		count++;
-		curr=exp.find(alphabet[i],curr)+1;
-	  }
+	  count++;
+	  curr=exp.find(alphabet[i],curr)+1;
 	}
+	numOfAlphabet[i]=count;
   }
 }
 

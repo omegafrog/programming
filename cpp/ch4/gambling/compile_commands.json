@@ -1,0 +1,17 @@
+[
+    {
+        "command": "c++ -c -o main.o /home/jiwoo22110103/programming/cpp/ch4/gambling/main.cpp",
+        "directory": "/home/jiwoo22110103/programming/cpp/ch4/gambling",
+        "file": "/home/jiwoo22110103/programming/cpp/ch4/gambling/main.cpp"
+    },
+    {
+        "command": "c++ -c -o gamblingGame.o /home/jiwoo22110103/programming/cpp/ch4/gambling/gamblingGame.cpp",
+        "directory": "/home/jiwoo22110103/programming/cpp/ch4/gambling",
+        "file": "/home/jiwoo22110103/programming/cpp/ch4/gambling/gamblingGame.cpp"
+    },
+    {
+        "command": "c++ -c -o player.o /home/jiwoo22110103/programming/cpp/ch4/gambling/player.cpp",
+        "directory": "/home/jiwoo22110103/programming/cpp/ch4/gambling",
+        "file": "/home/jiwoo22110103/programming/cpp/ch4/gambling/player.cpp"
+    }
+]

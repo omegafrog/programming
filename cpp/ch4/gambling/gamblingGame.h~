@@ -1,0 +1,19 @@
+#ifndef __GAMBLINGAME_H__
+#define __GAMBLINGAME_H__
+
+class gamblingGame{
+ private:
+  player pp[2]; // player array pointer
+
+  
+ protected:
+  
+ public:
+  gamblingGame();
+  ~gamblingGame();
+
+  int isCorrect(); // three num of slot is all same.
+  void startGame();
+  
+};
+#endif
