@@ -1,9 +1,14 @@
-#include "player.h"
+#include "player.hpp"
 
-player::player(){
-  for(int i=0;i<3;i++){
-	slots[i]=0;
+player::player() : player(0){
+
+}
+
+player::player(string name){
+  for (int i = 0; i < 3; i++) {
+    slots[i] = 0;
   }
+  this->name = name;
 }
 
 player::~player(){};

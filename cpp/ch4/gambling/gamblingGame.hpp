@@ -2,6 +2,8 @@
 #define __GAMBLINGAME_H__
 
 #include <iostream>
+#include "player.hpp"
+using namespace std;
 
 class gamblingGame{
  private:
@@ -11,8 +13,7 @@ class gamblingGame{
  protected:
   
  public:
-  gamblingGame();
-  ~gamblingGame();
+
 
   int isCorrect(int turn); // three num of slot is all same. turn means who's turn
   void startGame();
