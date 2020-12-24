@@ -1,0 +1,24 @@
+#ifndef __MYINTSTACK_H__
+#define __MYINTSTACK_H__
+
+#include <iostream>
+using namespace std;
+
+class MyIntStack{
+private:
+  int *p;
+  int size;
+  int tos;
+protected:
+  
+public:
+  MyIntStack();
+  MyIntStack(int size);
+  MyIntStack(const MyIntStack& s);
+  ~MyIntStack();
+  bool push(int n);
+  bool pop(int &n);
+};
+
+
+#endif

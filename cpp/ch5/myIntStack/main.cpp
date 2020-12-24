@@ -8,6 +8,8 @@ int main(){
   cout << s1.push(4)<<endl;
   
   int n;
-  cout << s1.pop(n) << " " << n<<endl;
-  cout << s1.pop(n) << " " << n<<endl;
+  cout << s1.pop(n) << " ";
+  cout << n<<endl;
+  cout << s1.pop(n) << " ";
+  cout <<n<<endl;
 }
