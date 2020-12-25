@@ -1,0 +1,12 @@
+#include "upAndDownGame.hpp"
+
+int upAndDown::answer=0;
+person upAndDown::p[2]={person("a"),person("b")};
+
+void upAndDown::makeRandomAns(){
+  srand((unsigned)time(0));
+  int n = rand();
+  upAndDown::answer=n%100;
+}
+
+bool isCorrect(int& )

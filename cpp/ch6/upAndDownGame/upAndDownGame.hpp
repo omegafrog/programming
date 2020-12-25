@@ -1,0 +1,23 @@
+#ifndef __UPDOWNGAME_H__
+#define __UPDOWNGAME_H__
+#include <iostream>
+#include "person.hpp"
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+class upAndDown
+{
+private:
+  static int answer;
+  static person p[2];
+
+  
+  static void makeRandomAns();
+  static bool isCorrect(int& value);
+public:
+  static void question(person& p);
+  static int getAns();
+};
+
+#endif
