@@ -1,5 +1,8 @@
 #ifndef ___ACCUMULATOR_H__
 #define ___ACCUMULATORH__
+
+#include <iostream>
+using namespace std;
 class Accumulator{
 private:
   int value;
