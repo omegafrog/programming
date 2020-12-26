@@ -1,0 +1,11 @@
+#include "arrayUtil.hpp"
+using namespace std;
+
+int main(){
+  arrayUtility2 au1;
+  int** tmp;
+  tmp = au1.setArray();
+  int* s3;
+
+  s3 = arrayUtility2::concat()
+}
