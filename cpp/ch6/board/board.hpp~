@@ -1,0 +1,17 @@
+#ifndef BOARD_H
+#define BOARD_H
+
+#include <iostream>
+using namespace std;
+
+class Board{
+private:
+  static string* strp; // string pointer for array
+  static int index; // board post's index.
+public:
+  void add(string post);
+  void print();  
+};
+
+
+#endif /* BOARD_H */
