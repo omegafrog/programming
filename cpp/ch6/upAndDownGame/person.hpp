@@ -5,12 +5,13 @@ using namespace std;
 
 class person{
   string name;
-  int value;
+  int playerAnswer;
 public:
   person(string name);  
 
-  int& setValue();
-  int getValue();
+  int setAnswer();
+  string getName();
+  int getAnswer();
 };
 
 #endif /* PERSON_H */

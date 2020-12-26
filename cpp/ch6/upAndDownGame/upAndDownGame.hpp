@@ -11,13 +11,17 @@ class upAndDown
 private:
   static int answer;
   static person p[2];
+  static int minValue;
+  static int maxValue;
 
   
   static void makeRandomAns();
-  static bool isCorrect(int& value);
+  static bool isCorrect(person p);
+  static void setMinMaxVal(int answer);
+  static void printHint();
 public:
-  static void question(person& p);
-  static int getAns();
+  static void startGame();
+
 };
 
 #endif

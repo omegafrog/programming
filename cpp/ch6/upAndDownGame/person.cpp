@@ -2,16 +2,20 @@
 
 person::person(string name){
   this->name = name;
+  this->playerAnswer=-1;
 }
 
-int& person::setValue(){
+int person::setAnswer(){
   cout << name << ">>";
-  cin >> value;
-  int& ref=value;
-  return ref;
+  cin >> playerAnswer;
+  return playerAnswer;
 }
-int person::getValue() 
+string person::getName() 
 {
-  return value;
+  return name;
+}
+
+int person::getAnswer(){
+  return playerAnswer;
 }
 
