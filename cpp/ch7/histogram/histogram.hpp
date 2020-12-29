@@ -15,9 +15,11 @@ public:
 
   void toLower(string& str); // change upper char to lower char
   void countAlpha(); // count str's alphabet and update alphabet array.
+  int getTotalAlphabetCount(); // get total alphabet character's number.
+  inline void printStar(int index); // print star. index is alphabet's index.
 
-  string& operator<<(string inputstr); // get inputstr and append to str.
-  string& operator<<(char inputchar); // get inputchar and append to str.
+  Histogram& operator<<(string inputstr); // get inputstr and append to str.
+  Histogram& operator<<(char inputchar); // get inputchar and append to str.
 
   void operator!(); // draw histogram.
 };
