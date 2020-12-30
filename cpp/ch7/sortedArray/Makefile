@@ -6,10 +6,10 @@ OBJECTS = main.o sortedArray.o
 all : ${TARGET}
 
 ${TARGET} : ${OBJECTS}
-	${CC} ${CFLAGS} -o $@ $>
+	${CC} ${CFLAGS} -o $@ $^
 
 %.o : %.cpp
-	${CC} ${CFLAGS} -c -o $@ $>
+	${CC} ${CFLAGS} -c -o $@ $<
 
 clean :
 	rm *.o main
