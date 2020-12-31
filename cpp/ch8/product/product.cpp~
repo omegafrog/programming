@@ -1,0 +1,33 @@
+#include "product.hpp"
+
+Product::Product(int id, string description,string producer, int cost) 
+{
+  this->id = id;
+  this->description=description;
+  this->producer=producer;
+  this->cost = cost;
+  
+}
+
+int Product::getId()
+{
+  return id;
+}
+
+string Product::getDescription()
+{
+  return description;
+}
+
+string Product::getProducer()
+{
+  return producer;
+}
+
+int Product::getCost()
+{
+  return cost;
+}
+
+
+
