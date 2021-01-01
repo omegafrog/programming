@@ -1,10 +1,8 @@
 #include "product.hpp"
 
-int Product::id = 0;
-
-Product::Product() 
+Product::Product(int id) 
 {
-  id++;
+  this->id = id;
   setDescription();
   setProducer();
   setCost();
@@ -13,23 +11,31 @@ Product::Product()
 void Product::setDescription(){
   cout << "product description>>";
   getline(cin, description);
+  //cin.ignore();
 
 }
 
 void Product::setProducer()
 {
   cout << "producer>>";
-  cin >> producer;
+  while(!( cin >> producer)){
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(),'\n');
+	cout <<"wrong input. try again>>";
+  }
+
 
 }
 
 void Product::setCost()
 {
   cout <<"cost>>";
-  cin >> cost;
-
+  while(!( cin >> cost)){
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(),'\n');
+	cout <<"wrong input. try again>>";
+  }
 }
-
 
 
 int Product::getId()
@@ -51,6 +57,8 @@ int Product::getCost()
 {
   return cost;
 }
+
+
 
 
 

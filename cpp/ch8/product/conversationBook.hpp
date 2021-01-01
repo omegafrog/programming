@@ -5,11 +5,11 @@
 #include "book.hpp"
 using namespace std;
 
-class ConversationBook : protected Book{
+class ConversationBook : public Book{
 private:
   string language;
 public:
-  ConversationBook();
+  ConversationBook(int id);
 
   void setLanguage();
 

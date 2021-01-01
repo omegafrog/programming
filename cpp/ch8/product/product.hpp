@@ -2,11 +2,13 @@
 #define PRODUCT_H
 
 #include <iostream>
+#include <limits>
+
 using namespace std;
 
 class Product{
 private:
-  static int id;
+  int id;
   string description;
   string producer;
   int cost;
@@ -14,7 +16,8 @@ private:
 
 public:
 
-  Product();
+  Product(int id);
+  virtual ~Product() {};
   
   // setter
   void setDescription();
@@ -22,6 +25,7 @@ public:
   void setCost();
   
   // getter
+
   int getId();
   string getDescription();
   string getProducer();

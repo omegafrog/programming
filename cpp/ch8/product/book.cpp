@@ -1,6 +1,6 @@
 #include "book.hpp"
 
-Book::Book():Product()
+Book::Book(int id):Product(id)
 {
   setISBN();
   setAuthor();
@@ -10,19 +10,32 @@ Book::Book():Product()
 void Book::setISBN()
 {
   cout <<"ISBN>>";
-  cin >> isbn;
+  while(!( cin >> isbn)){
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(),'\n');
+	cout <<"wrong input. try again>>";
+  }
+
 }
 
 void Book::setAuthor()
 {
   cout <<"Author>>";
-  cin>>author;
+  while(!( cin >> author)){
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(),'\n');
+	cout <<"wrong input. try again>>";
+  }
 }
 
 void Book::setTitle()
 {
   cout <<"title>>";
-  cin>>title;
+  while (!(cin >> title)) {
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "wrong input. try again>>";
+  }
 }
 
 int Book::getISBN()

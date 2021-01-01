@@ -1,0 +1,23 @@
+#ifndef COMPACTDISC_H
+#define COMPACTDISC_H
+
+#include <iostream>
+#include "product.hpp"
+using namespace std;
+
+class compactDisc : public Product{
+private:
+  string title;
+  string singer;
+public:
+  compactDisc();
+
+  void setTitle();
+  void setSinger();
+
+  string getTitle();
+  string getSinger();
+};
+
+
+#endif /* COMPACTDISC_H */
