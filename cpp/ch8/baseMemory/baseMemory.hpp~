@@ -1,0 +1,17 @@
+#ifndef BASEMEMORY_H
+#define BASEMEMORY_H
+
+#include <iostream>
+using namespace std;
+
+class BaseMemory {
+private:
+	char *mem;
+public:
+	BaseMemory(int size);
+	~BaseMemory(){delete [] mem;}
+	
+};
+
+
+#endif /* BASEMEMORY_H */

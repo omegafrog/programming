@@ -1,0 +1,33 @@
+#ifndef PRINTER_H
+#define PRINTER_H
+
+#include <iostream>
+using namespace std;
+
+class Printer {
+private:
+  string model;
+  string manufacturer;
+  int printedCount;
+  int availableCount;
+
+public:
+  Printer() { printedCount = 0; }
+  ~Printer() {}
+
+  void print(int pages) {
+    printedCount += pages;
+    availableCount -= pages;
+  }
+
+  string setModel() {
+    cin >> model;
+    cin.ignore();
+  }
+	string string getModel() { return model; }
+  string getManufacturer() { return manufacturer; }
+  int getPrintedCount() { return printedCount; }
+  int getAvailableCount() { return availableCount; }
+};
+
+#endif /* PRINTER_H */

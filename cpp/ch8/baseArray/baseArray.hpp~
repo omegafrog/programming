@@ -1,0 +1,19 @@
+#ifndef BASEARRAY_H
+#define BASEARRAY_H
+
+#include <iostream>
+using namespace std;
+
+class BaseArray{
+private:
+  int capacity; // size of array
+  int *mem; // pointer for integer array
+public:
+  BaseArray(int capacity = 100) {
+	this->capacity = capacity; mem = new int[capacity];
+  }
+  ~BaseArray()
+};
+
+
+#endif /* BASEARRAY_H */

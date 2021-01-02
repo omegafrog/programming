@@ -1,0 +1,10 @@
+#include "rom.hpp"
+
+ROM::ROM(int capacity, char *arr, int size) : BaseMemory(capacity) {
+  this->size = size;
+  for (int i = 0; i < size; i++) {
+    put(arr[i], i);
+  }
+}
+
+char ROM::read(int index) { return get(index); }

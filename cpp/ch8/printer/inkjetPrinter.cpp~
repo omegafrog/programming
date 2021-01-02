@@ -1,0 +1,14 @@
+#include "inkjetPinter.hpp"
+
+InkJetPrinter::InkJetPrinter(int availableInk)  : Printer()
+{
+	
+}
+
+
+
+void InkJetPrinter::printInkJet(int pages)
+{
+	cout << getModel() <<", "<< getManufacturer()<<", "<<"left paper:"<<getAvailableCount()<<", "
+		 <<"left ink:"<<availableInk<<endl;
+}
