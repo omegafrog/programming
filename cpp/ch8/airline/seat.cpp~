@@ -1,0 +1,8 @@
+#include "seat.hpp"
+
+Seat::Seat(int index) 
+{
+  name = "";
+
+}
+

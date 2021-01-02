@@ -1,0 +1,37 @@
+#include "schedule.hpp"
+
+Schedule::Schedule(int scheduleTime)  
+{
+  this->scheduleTime = scheduleTime;
+}
+
+void Schedule::setSeats(int index)
+{
+  seats[index].setName();
+  seats[index].setEmptyState();
+}
+
+void Schedule::setScheduleTime()
+{
+  cout << "changed airline schedule time>>";
+  while(!(cin>>scheduleTime)){
+	cout << "wrong value. try again.>>";
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(),'\n');
+  }
+}
+
+Seat& Schedule::getSeat(int index)
+{
+  return seats[index];
+}
+
+int Schedule::getScheduleTime()
+{
+  return scheduleTime;
+}
+
+
+
+
+

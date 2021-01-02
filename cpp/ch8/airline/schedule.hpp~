@@ -1,0 +1,24 @@
+#ifndef SCHEDULE_H
+#define SCHEDULE_H
+
+#include "seat.hpp"
+#include <iostream>
+using namespace std;
+
+class Schedule {
+private:
+  Seat seats[8];
+  int scheduleTime;
+
+public:
+  Schedule();
+  ~Schedule() {}
+
+  void setSeats(int index);
+  void setScheduleTime();
+
+  Seat &getSeat(int index);
+  int getScheduleTime();
+};
+
+#endif /* SCHEDULE_H */
