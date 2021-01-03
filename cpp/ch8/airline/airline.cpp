@@ -9,7 +9,7 @@ int AirLine::makeReserv(int scheduleTime, int index, string name) {
   // make new seat object
   Seat newSeat(index);
   newSeat.setName(name);
-  newSeat.setEmptyState(1);
+  newSeat.setEmptyState(0);
 
   // check whether index is correct or not
   if (0 > index || index > 7) {
@@ -37,6 +37,7 @@ int AirLine::makeReserv(int scheduleTime, int index, string name) {
 	break;
   }
 
+  schedules[scheduleIndex].getSeat(index)=newSeat;
   // if (scheduleTime == MORNING) { if
   //   (schedules[0].getSeat(index).isEmpty())
   //   schedules[0].getSeat(index) = newSeat; } else if (scheduleTime
@@ -71,7 +72,7 @@ int AirLine::cancelReserv(int scheduleTime, int index, string name) {
   }
 
   // check index is correct.
-  if (0 <= index && index < 8) {
+  if (0 > index || index > 8) {
 	// cout << "wrong seat index." << endl;
     return WRONG_SEAT_EXCEPTION;
   }
@@ -80,18 +81,18 @@ int AirLine::cancelReserv(int scheduleTime, int index, string name) {
   Seat &canceledSeat = schedules[scheduleIndex].getSeat(index);
   
   // compare seat index
-  if (!canceledSeat.isEmpty()) { 
+  if (canceledSeat.isEmpty()) { 
 	// cout << "this seat is already empty." << endl;
     return EMPTY_SEAT_EXCEPTION;
   }// compare name
-  if (!canceledSeat.getName().compare(name)) { 
+  if (canceledSeat.getName().compare(name)!=0) { 
 	// cout << "Reserved Seat's name is not equall to inserted name."
 	// << endl;
     return WRONG_SEATNAME_EXCEPTION;
   }
 
   // if all parameter is right, set seat's empty state to 0.
-  canceledSeat.setEmptyState(0);
+  canceledSeat.setEmptyState(1);
   return 0;
 }
 

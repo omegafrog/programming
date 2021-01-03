@@ -10,6 +10,7 @@ void Console::interface(AirLine& airline) {
   int scheduleTime;
   int seatIndex;
   string name;
+  int scheduleIndex;
   while (1) {
     cout << "reservation:1, cancel:2, see reservations:3, quit:4>>";
     while (!(cin >> choice) || (choice < 0) || (choice > 4)) {
@@ -22,10 +23,21 @@ void Console::interface(AirLine& airline) {
     case 1: {
       // input scheduletime
       scheduleTime = setScheduleTime();
+	  if(scheduleTime == MORNING)
+		scheduleIndex = 0;
+	  else if(scheduleTime == NOON)
+		scheduleIndex = 1;
+	  else if(scheduleTime == EVE)
+		scheduleIndex = 2;
+	  else {
+		cout << "wrong scheduleTime.";
+		break;
+	  }
+	  Schedule* Schedules = airline.returnPeekValue();
 	  // print selected scheduletime's seats
-      printSeats(scheduleTime);
+      printSeats(Schedules[scheduleIndex]);
 	  // input seatindex
-      seatIndex = setSeatIndex()+1;
+      seatIndex = setSeatIndex()-1;
       // input name
       name = setName();
 
@@ -52,14 +64,26 @@ void Console::interface(AirLine& airline) {
     case 2: {
       // input scheduletime
       scheduleTime = setScheduleTime();
-      // print selected scheduletime's seats
-      printSeats(scheduleTime);
+	  // print selected scheduletime's seat
+	  Schedule* Schedules = airline.returnPeekValue();
+	  if(scheduleTime == MORNING)
+		scheduleIndex = 0;
+	  else if(scheduleTime == NOON)
+		scheduleIndex = 1;
+	  else if(scheduleTime == EVE)
+		scheduleIndex = 2;
+	  else {
+		cout << "wrong scheduleTime.";
+		break;
+	  }
+	  // print selected scheduletime's seats
+	  printSeats(Schedules[scheduleIndex]);
       // input seatindex
-      seatIndex = setSeatIndex();
+      seatIndex = setSeatIndex()-1;
       // input name
       name = setName();
       // cancel reservation
-      switch (airline.cancelReserv(setScheduleTime(), setSeatIndex(), setName())) {
+      switch (airline.cancelReserv(scheduleTime, seatIndex, name)) {
         // get wrong seat index;
       case WRONG_SEAT_EXCEPTION: {
         cout << "wrong seat index number." << endl;
