@@ -2,18 +2,14 @@
 
 Schedule::Schedule(int scheduleTime) { this->scheduleTime = scheduleTime; }
 
-void Schedule::setSeats(int index) {
-  seats[index].setName();
-  seats[index].setEmptyState();
+void Schedule::setSeats(string name, int index, bool state) {
+  seats[index].setName(name);
+  seats[index].setEmptyState(state);
 }
 
-void Schedule::setScheduleTime() {
-  cout << "changed airline schedule time>>";
-  while (!(cin >> scheduleTime)) {
-    cout << "wrong value. try again.>>";
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-  }
+void Schedule::setScheduleTime(int scheduleTime) {
+  
+  this->scheduleTime = scheduleTime;
 }
 
 Seat &Schedule::getSeat(int index) { return seats[index]; }

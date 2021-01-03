@@ -18,8 +18,8 @@ public:
   Schedule(int scheduleTime);
   ~Schedule() {}
 
-  void setSeats(int index);
-  void setScheduleTime();
+  void setSeats(string name, int index, bool state);
+  void setScheduleTime(int scheduleTime);
 
   Seat &getSeat(int index);
   int getScheduleTime();

@@ -45,7 +45,6 @@ public:
   ~AirLine() {}
   
   
-  Console& getConsole();
   int makeReserv(int scheduleTime, int index, string name);
   int cancelReserv(int scheduletime, int index, string name);
   Schedule* returnPeekValue();

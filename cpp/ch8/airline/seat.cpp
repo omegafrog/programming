@@ -6,20 +6,15 @@ Seat::Seat(int index) {
   empty = 1;
 }
 
-void Seat::setName() {
-  cout << "client name:";
-  while (!(cin >> name)) {
-    cout << "wrong value. try again.>>";
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-  }
+void Seat::setName(string name) {
+  // cout << "client name:"; while (!(cin >> name)) { cout << "wrong
+  // value. try again.>>"; cin.clear();
+  // cin.ignore(numeric_limits<streamsize>::max(), '\n'); }
+  this->name = name;
 }
 
-void Seat::setEmptyState() {
-  if (empty)
-    empty = false;
-  else
-    empty = true;
+void Seat::setEmptyState(bool state) {
+  empty = state;
 }
 
 string Seat::getName() { return name; }

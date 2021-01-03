@@ -1,0 +1,35 @@
+/////////////////////////////////////////
+// control program's input and output. //
+/////////////////////////////////////////
+#ifndef CONSOLE_H
+#define CONSOLE_H
+
+#include <iostream>
+#include <limits>
+#include "airline.hpp"
+using namespace std;
+
+class Console {
+private:
+  string name;
+public:
+  Console();
+  ~Console(){}
+
+  void interface(); // print menu
+  void printSeats(Schedule schedule); // print selected schedule's seats 
+  void peek(Schedule* schedules); // print all schedule's seats
+  
+  // get input from user and return
+  int setScheduleTime();
+  int setSeatIndex();
+  string setName();
+  
+  friend int AirLine::makeReserv(int scheduleTime, int index, string name);
+  friend int AirLine::cancelReserv(int scheduletime, int index, string name);
+  
+  
+};
+
+
+#endif /* CONCOLE_H */

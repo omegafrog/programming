@@ -1,0 +1,153 @@
+#include "airline.hpp"
+
+Console::Console() {}
+
+void Console::interface(AirLine& airline) {
+  cout << "***** welcome to jeju air *****" << endl;
+  cout << endl;
+
+  int choice;
+  int scheduleTime;
+  int seatIndex;
+  string name;
+  while (1) {
+    cout << "reservation:1, cancel:2, see reservations:3, quit:4>>";
+    while (!(cin >> choice) || (choice < 0) || (choice > 4)) {
+      cout << "wrong value. try again>>";
+      cin.clear();
+      cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    switch (choice) {
+      // make reservation
+    case 1: {
+      // input scheduletime
+      scheduleTime = setScheduleTime();
+	  // print selected scheduletime's seats
+      printSeats(scheduleTime);
+	  // input seatindex
+      seatIndex = setSeatIndex()+1;
+      // input name
+      name = setName();
+
+	  // make reservation.
+      switch (airline.makeReserv(scheduleTime, seatIndex, name)) {
+        // get wrong seat index;
+      case WRONG_SEAT_EXCEPTION: {
+        cout << "wrong seat index number." << endl;
+        break;
+      }
+        // get wrong seatname
+      case WRONG_SEATNAME_EXCEPTION: {
+        cout << "Reserved Seat's name is not equall to inserted name." << endl;
+        break;
+      }
+      case WRONG_SCHEDULE_EXCEPTION: {
+        cout << "no input schedule exist." << endl;
+        break;
+      }
+      }
+      break;
+    }
+    // cancel reservation
+    case 2: {
+      // input scheduletime
+      scheduleTime = setScheduleTime();
+      // print selected scheduletime's seats
+      printSeats(scheduleTime);
+      // input seatindex
+      seatIndex = setSeatIndex();
+      // input name
+      name = setName();
+      // cancel reservation
+      switch (airline.cancelReserv(setScheduleTime(), setSeatIndex(), setName())) {
+        // get wrong seat index;
+      case WRONG_SEAT_EXCEPTION: {
+        cout << "wrong seat index number." << endl;
+        break;
+      }
+        // get wrong seatname
+      case WRONG_SEATNAME_EXCEPTION: {
+        cout << "Reserved Seat's name is not equall to inserted name." << endl;
+        break;
+      }
+        // get wrong schedule
+      case WRONG_SCHEDULE_EXCEPTION: {
+        cout << "no input schedule exist." << endl;
+        break;
+      }
+        // selected seat is already empty.
+      case EMPTY_SEAT_EXCEPTION: {
+        cout << "this seat is already empty." << endl;
+        break;
+      }
+      }
+      break;
+    }
+
+    // peek all reservations.
+    case 3: {
+      peek(airline.returnPeekValue());
+      break;
+    }
+
+    case 4: {
+      cout << "quit reservation system." << endl;
+      exit(0);
+    } break;
+    }
+  }
+}
+
+void Console::printSeats(Schedule schedule) {
+  cout << schedule.getScheduleTime() << " :";
+  for (int i = 0; i < MAX_SEATS_SIZE; i++) {
+    // if seat is not empty
+    if (!schedule.getSeat(i).isEmpty()) {
+      cout << "   " + schedule.getSeat(i).getName();
+
+    } else { // seat is empty
+      cout << "   ---";
+    }
+  }
+  cout << endl;
+}
+
+void Console::peek(Schedule *schedules) {
+  for (int i = 0; i < MAX_SCHEDULE_SIZE; i++)
+    printSeats(schedules[i]);
+}
+
+int Console::setScheduleTime() {
+  int scheduleTime;
+  cout << "airline schedule time>>";
+  while (!(cin >> scheduleTime)) {
+    cout << "wrong value. try again.>>";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  }
+
+  return scheduleTime;
+}
+
+int Console::setSeatIndex() {
+  int index;
+  cout << "seat index>>";
+  while (!(cin >> index)) {
+    cout << "wrong value. try again>>";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  }
+  cin.ignore();
+  return index;
+}
+
+string Console::setName() {
+  string name;
+  cout << "name>>";
+  while (!(getline(cin, name))) {
+    cout << "wrong input. try again>>";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  }
+  return name;
+}

@@ -14,8 +14,8 @@ public:
   Seat(int index);
   ~Seat() {}
 
-  void setName();
-  void setEmptyState();
+  void setName(string name);
+  void setEmptyState(bool state);
 
   string getName();
   int getIndex();
