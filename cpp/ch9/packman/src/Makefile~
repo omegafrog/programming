@@ -1,0 +1,4 @@
+CC = g++
+CXXFLAGS = -g -std=c++17
+TARGET = main
+OBJECTS = main.o human.o monster.o food.o game.o
