@@ -1,0 +1,14 @@
+#include "inkjetPrinter.hpp"
+
+InkjetPrinter::InkjetPrinter(string modelName, string manufacturer, int availableCount ,int availableInk)  : Printer(modelName, manufacturer, availableCount)
+{
+  this->availableInk = availableInk;
+}
+
+void InkjetPrinter::print(int pages)
+{
+  
+
+}
+
+

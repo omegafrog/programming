@@ -1,0 +1,25 @@
+#ifndef PRINTER_H
+#define PRINTER_H
+
+#include <iostream>
+using namespace std;
+
+class Printer {
+private:
+  string modelName;
+  string manufacturer;
+  int printedCount;
+  int availableCount;
+  
+public:
+  Printer(string modelName, string manufacturer, int availableCount);
+  virtual ~Printer(){}
+
+  virtual void print(int pages);
+  virtual void show()=0;
+};
+
+
+
+
+#endif /* PRINTER_H */

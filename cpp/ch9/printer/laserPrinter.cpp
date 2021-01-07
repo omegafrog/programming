@@ -1,0 +1,23 @@
+#include "laserPrinter.hpp"
+
+LaserPrinter::LaserPrinter(string modelName, string manufacturer, int availableCount, int availableToner)  :  Printer(modelName, manufacturer, availableCount)
+{
+  this -> availableToner = availableToner;
+}
+
+void LaserPrinter::print(int pages)
+{
+  Printer::print(pages);
+  if (availableCount >= pages || availableToner >= pages) {
+    availableCount -= pages;
+    availableToner -= pages;
+  } else
+	return;
+}
+
+void LaserPrinter::show()
+{
+  cout << modelName << ", " << manufacturer << ", " << availableCount << ", " << availableToner << endl;
+}
+
+
