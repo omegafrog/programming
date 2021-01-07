@@ -8,7 +8,7 @@ InkjetPrinter::InkjetPrinter(string modelName, string manufacturer, int availabl
 void InkjetPrinter::print(int pages)
 {
   Printer::print(pages);
-  if (availableCount >= pages || availableInk >= pages) {
+  if (availableCount >= pages && availableInk >= pages) {
     availableCount -= pages;
     availableInk -= pages;
   } else

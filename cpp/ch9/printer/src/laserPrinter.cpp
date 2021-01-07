@@ -8,7 +8,7 @@ LaserPrinter::LaserPrinter(string modelName, string manufacturer, int availableC
 void LaserPrinter::print(int pages)
 {
   Printer::print(pages);
-  if (availableCount >= pages || availableToner >= pages) {
+  if (availableCount >= pages && availableToner >= pages) {
     availableCount -= pages;
     availableToner -= pages;
   } else
