@@ -2,18 +2,19 @@
 #define UI_H
 
 #include <iostream>
+#include <limits>
 using namespace std;
-
+class GraphicEditor;
 class UI {
 private:
+protected:
 public:
-  UI();
-  ~UI(){}
+  ~UI() {}
 
   static void ShowMenu();
   static int GetMenu();
   static int GetShapeType();
+  static int GetObjectIndex(GraphicEditor &);
 };
-
 
 #endif /* UI_H */

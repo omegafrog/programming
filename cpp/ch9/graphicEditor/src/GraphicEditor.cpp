@@ -1,0 +1,122 @@
+#include "GraphicEditor.hpp"
+
+#include "Circle.hpp"
+#include "Line.hpp"
+#include "Rectangle.hpp"
+#include "Shape.hpp"
+#include "UI.hpp"
+
+const string Shape::aShapeArray[SHAPE_NUM] = {"Line", "Circle", "Rectangle"};
+
+GraphicEditor::GraphicEditor() {
+  apStart = nullptr;
+  apLast = nullptr;
+  aSize = 0;
+  aInterface = new UI;
+}
+
+GraphicEditor::~GraphicEditor() {
+  // delete all added shapes
+  Shape *pCurrentShape = apStart;
+  while (pCurrentShape != nullptr) {
+    delete pCurrentShape;
+    pCurrentShape = pCurrentShape->GetApNextObject();
+  }
+  // delete UI
+  delete aInterface;
+}
+
+// add Shape first of list
+void GraphicEditor::Add(const int typeIndex) {
+  Shape *newShape = 0;
+  if (typeIndex == 1) { // Shape is line
+    newShape = new Line;
+  } else if (typeIndex == 2) { // Shape is Circle
+    newShape = new Circle;
+  } else if (typeIndex == 3) { // Shape is Rectangle
+    newShape = new Rectangle;
+  }
+
+  if (!apStart) {
+	//cout << newShape->ToString()<<endl; okay
+    newShape->SetApNextObject(apStart);
+    apStart = newShape;
+    apLast = newShape;
+  } else {
+    newShape->SetApNextObject(apStart);
+    apStart = newShape;
+  }
+  aSize++;
+}
+
+void GraphicEditor::Delete(const int index) {
+  Shape *pCurrentObject = apStart;
+  Shape *pDeleteObject = 0;
+
+  if (index == 1) { // delete first object.
+    apStart = pCurrentObject->GetApNextObject();
+    delete pCurrentObject;
+	pCurrentObject = 0;
+  } else if (index == aSize) { // delete last
+	for(int i=0;i<aSize-1;i++){
+	  pCurrentObject = pCurrentObject->GetApNextObject();
+	}
+	delete pCurrentObject->GetApNextObject();
+	pCurrentObject->SetApNextObject(nullptr);
+	pCurrentObject = 0;
+  } else {
+    for (int i = 0; i < index-2 ; i++) {  
+    pCurrentObject = pCurrentObject->GetApNextObject();
+  }
+    pDeleteObject = pCurrentObject->GetApNextObject();
+    pCurrentObject->SetApNextObject(pDeleteObject->GetApNextObject());
+    delete pDeleteObject;
+	pDeleteObject = 0;
+  }
+  aSize--;
+}
+
+void GraphicEditor::Peek() {
+  Shape *pCurrentObject = apStart;
+  if (apStart) {
+    for (int i = 0; i < aSize; i++) {
+      cout << i+1 << ":";
+      pCurrentObject->Draw();
+	  pCurrentObject = pCurrentObject->GetApNextObject();
+	  cout <<endl;
+    }
+
+  }
+}
+
+void GraphicEditor::Quit() { exit(0); }
+
+void GraphicEditor::StartEditor() {
+
+  while (1) {
+
+    UI::ShowMenu();
+    int choice = UI::GetMenu();
+
+    switch (choice) {
+    case 1: { // add Object
+      Add(UI::GetShapeType());
+      break;
+    }
+    case 2: { // delete object
+      Delete(UI::GetObjectIndex(*this));
+      break;
+    }
+    case 3: { // peek all object
+      Peek();
+      break;
+    }
+    case 4: { // quit program
+      Quit();
+      break;
+    }
+    default: {
+    }
+    }
+  }
+}

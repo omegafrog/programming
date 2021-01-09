@@ -1,0 +1,22 @@
+#ifndef CIRCLE_H
+#define CIRCLE_H
+
+#include "Shape.hpp"
+
+class Circle  :public Shape{
+private:
+public:
+  Circle() : Shape(){}
+  ~Circle(){}
+
+  void Draw()const{
+	cout << ToString();
+  }
+  const string ToString() const{
+	return "Circle";
+  }
+  
+};
+
+
+#endif /* CIRCLE_H */

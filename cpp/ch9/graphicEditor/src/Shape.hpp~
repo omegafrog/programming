@@ -9,15 +9,19 @@ using namespace std;
 class Shape {
 private:
 protected:
-  static string aShapeArray[SHAPE_NUM];
+
   Shape *apNextObject;
 public:
-  Shape();
+  Shape(){apNextObject = 0;}
   virtual ~Shape(){delete apNextObject;}
 
-  virtual void Draw()=0;
-  virtual string ToString()=0;
+  virtual void Draw()const=0;
+  const virtual string ToString()const=0;
+
+  const static string aShapeArray[SHAPE_NUM];
+  void SetApNextObject(Shape* nextObject) { this->apNextObject = nextObject;}
   Shape* GetApNextObject(){return apNextObject;}
+
 };
 
 
