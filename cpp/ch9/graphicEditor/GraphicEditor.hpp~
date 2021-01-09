@@ -1,0 +1,18 @@
+#ifndef GRAPHICEDITOR_H
+#define GRAPHICEDITOR_H
+
+class Shape;
+class UI;
+class GraphicEditor {
+private:
+  Shape *apStart, *apLast;
+  int aSize;
+  UI aInterface;
+public:
+  GraphicEditor(args);
+  ~GraphicEditor(){exp}
+  
+};
+
+
+#endif /* GRAPHICEDITOR_H */
