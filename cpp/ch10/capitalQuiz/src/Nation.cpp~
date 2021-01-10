@@ -1,0 +1,37 @@
+#include "Nation.hpp"
+
+Nation::Nation(string nationName, string capitalName) 
+{
+  mNationName = nationName;
+  mCapitalName = capitalName;
+}
+
+void Nation::SetNationName(string nationName)
+{
+  mNationName = nationName;
+}
+
+void Nation::SetCapitalName(string capitalName)
+{
+  mCapitalName = capitalName;
+}
+
+const string Nation::GetNationName()
+{
+  return mNationName;
+}
+
+const string Nation::GetCapitalName()
+{
+  return mCapitalName;
+}
+
+bool Nation::IsCorrect(string nationName)
+{
+  return !mNationName.compare(nationName);
+}
+
+
+
+
+

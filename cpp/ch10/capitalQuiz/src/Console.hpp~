@@ -1,0 +1,23 @@
+#ifndef CONSOLE_H
+#define CONSOLE_H
+
+#include <iostream>
+using namespace std;
+
+class QuizManager;
+class Console {
+private:
+  
+public:
+  Console();
+  ~Console(){}
+  
+  static int GetMenuIndex(QuizManager&);
+  static string GetInputNationName();
+  static string GetInputCapitalName();
+
+  
+};
+
+
+#endif /* CONSOLE_H */
