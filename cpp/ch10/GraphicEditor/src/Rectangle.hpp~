@@ -1,0 +1,23 @@
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+
+#include "Shape.hpp"
+
+class Rectangle  :public Shape{
+private:
+
+public:
+  Rectangle() : Shape(){}
+  ~Rectangle(){}
+
+  void Draw() const{
+	cout << ToString();
+  }
+
+  const string ToString()const{
+	return "Rectangular";
+  }
+};
+
+
+#endif /* RECTANGLE_H */

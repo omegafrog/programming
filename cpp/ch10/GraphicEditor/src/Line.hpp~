@@ -1,0 +1,22 @@
+#ifndef LINE_H
+#define LINE_H
+
+#include "Shape.hpp"
+
+class Line  : public Shape{
+private:
+public:
+  Line():Shape(){};
+  ~Line(){}
+  
+   void Draw() const {
+	cout << ToString();
+  }
+
+  const  string ToString() const {
+	return "Line";
+  }
+};
+
+
+#endif /* LINE_H */

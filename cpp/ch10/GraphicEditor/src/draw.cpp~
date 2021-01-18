@@ -1,0 +1,13 @@
+#include "Circle.hpp"
+#include "Line.hpp"
+#include "Rectangle.hpp"
+
+void Line::Draw ()
+{
+  cout << ToString();
+}
+
+void Line::ToString(){
+  return "Line";
+}
+
