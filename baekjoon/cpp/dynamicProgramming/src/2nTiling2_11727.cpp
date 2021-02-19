@@ -6,11 +6,11 @@ long long *cache;
 
 long long tiling(int n){
 	if(n==1) return 1;
-	if(n==2) return 2;
+	if(n==2) return 3;
 	
 	long long& ret = cache[n];
 	if(ret!=-1) return ret;
-	ret = (tiling(n-1)+tiling(n-2))%10007;
+	ret = (tiling(n-1)+tiling(n-2)+tiling(n-2))%10007;
 	
 	return ret;
 }
