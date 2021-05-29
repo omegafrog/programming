@@ -15,7 +15,7 @@ void merge(int left, int mid, int right){
 	}
 	
 	while(l<=mid)tmp.push_back(input[l++]);
-	while(k<=mid)tmp.push_back(input[k++]);
+	while(k<=right)tmp.push_back(input[k++]);
 }
 
 void mergeSort(int start, int end){
